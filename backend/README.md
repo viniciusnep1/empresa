@@ -1,2 +1,2 @@
-# Reagro
-API REST para reagro
+# Empresa
+API REST para aprender o TDD - Test Driven Development com xUnit
