@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="services\apontamento_tipo\**" />
+    <Compile Remove="services\fazenda_tipo\**" />
+    <Compile Remove="services\maturidade_solo\**" />
+    <EmbeddedResource Remove="services\apontamento_tipo\**" />
+    <EmbeddedResource Remove="services\fazenda_tipo\**" />
+    <EmbeddedResource Remove="services\maturidade_solo\**" />
+    <None Remove="services\apontamento_tipo\**" />
+    <None Remove="services\fazenda_tipo\**" />
+    <None Remove="services\maturidade_solo\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="services\SyncPushInteractor.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="codecracker.CSharp" Version="1.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.4.0" />
+    <PackageReference Include="MediatR" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.2.0" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.5.3" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="4.5.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\entities\entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="gateways\file\" />
+    <Folder Include="gateways\http\" />
+    <Folder Include="gateways\smtp\" />
+    <Folder Include="services\equipe\validations\" />
+    <Folder Include="services\login\events\" />
+    <Folder Include="services\pessoa_tipo\validations\" />
+  </ItemGroup>
+
+</Project>
